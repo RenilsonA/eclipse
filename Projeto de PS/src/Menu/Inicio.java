@@ -1,24 +1,31 @@
 package Menu;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Inicio {
-	Funções fuctions = new Funções();
+	FunÃ§Ãµes fuctions = new FunÃ§Ãµes();
 	
-	public JFrame Inicio;
+	public JFrame Inicia;
+	
+	/*
+	 * public static void main(String[] args) { EventQueue.invokeLater(new
+	 * Runnable() { public void run() { try { Inicio window = new Inicio();
+	 * window.Inicia.setVisible(true); } catch (Exception e) { e.printStackTrace();
+	 * } } }); }
+	 */
 	
 	public void Sair() {
-		Inicio = new JFrame("Sair");
-		if (JOptionPane.showConfirmDialog(Inicio, "Você realmente quer sair?",
-			"Sistema de Gerenciamento dos Funcionários", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+		Inicia = new JFrame("Sair");
+		if (JOptionPane.showConfirmDialog(Inicia, "VocÃª realmente quer sair?",
+			"Sistema de Gerenciamento dos FuncionÃ¡rios", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
 			System.exit(0);
 		}
 	}
@@ -28,38 +35,38 @@ public class Inicio {
 	}
 	
 	public void initialize(){
-		Inicio = new JFrame();
-		Inicio.setBounds(0, 0, 854, 480);
-		Inicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Inicio.getContentPane().setLayout(null);
+		Inicia = new JFrame();
+		Inicia.setBounds(0, 0, 854, 480);
+		Inicia.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Inicia.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Sistema de Funcion\u00E1rios");
 		lblNewLabel.setBounds(0, 36, 838, 47);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 40));
-		Inicio.getContentPane().add(lblNewLabel);
+		Inicia.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Funcion\u00E1rios");
 		btnNewButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				Seleção chama = new Seleção();
-				Inicio.dispose();
+				SeleÃ§Ã£o chama = new SeleÃ§Ã£o();
+				Inicia.dispose();
 				chama.Funcionarios.setVisible(true);
 			}
 		});
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 20));
 		btnNewButton.setBounds(50, 330, 178, 47);
-		Inicio.getContentPane().add(btnNewButton);
+		Inicia.getContentPane().add(btnNewButton);
 		
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fuctions.Fechar();
-				Inicio.dispose();
+				Inicia.dispose();
 			}
 		});
 		btnFechar.setFont(new Font("Arial", Font.PLAIN, 20));
 		btnFechar.setBounds(667, 330, 111, 47);
-		Inicio.getContentPane().add(btnFechar);
+		Inicia.getContentPane().add(btnFechar);
 	}
 }
